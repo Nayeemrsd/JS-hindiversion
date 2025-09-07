@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Javascript</title>
+</head>
+<body style="background-color: black;color: white;">
+   <ul class="language">
+    <li>Javascript</li>
+   </ul>
+</body>
+<script>
+    function addLanguage (lang){
+        const li = document.createElement('li')
+        li.innerText = `${lang}`
+        document.querySelector('.language').appendChild(li)
+ 
+    }
+    addLanguage('python')
+    addLanguage('c++')
+
+    function addOptLanguage (lang) {
+         const li = document.createElement('li')
+        //  const text = document.createTextNode(`${lang}`)
+        //  li.appendChild(text)
+        // best way to write remember
+        li.appendChild(document.createTextNode(`${lang}`))
+         document.querySelector('.language').appendChild(li)
+
+    }
+    addOptLanguage('ruby')
+    addOptLanguage('typescript')
+
+    // Edit
+
+     const secLang = document.querySelector('li:nth-child(2)')
+     console.log(secLang);
+    // // secLang.innerHTML = "css"
+     const li = document.createElement('li')
+    li.textContent = 'css'
+    secLang.replaceWith(li)
+    // 
+
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+    
+
+</script>
+</html>
