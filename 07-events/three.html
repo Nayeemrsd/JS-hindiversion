@@ -12,18 +12,33 @@
 </body>
 <script>
      
-    const start = document.getElementById('start')
-    const stop = document.getElementById('stop')
-    start.addEventListener('click', function(){
-    let Myname =  setInterval(function(){
-             console.log('Mirza nayeem');
+//     const start = document.getElementById('start')
+//     const stop = document.getElementById('stop')
+//     start.addEventListener('click', function(){
+//     let Myname =  setInterval(function(){
+//              console.log('Mirza nayeem');
              
-         } , 1000)
-          stop.addEventListener('click', function(){
-clearInterval(Myname)
-    })
+//          } , 1000)
+//           stop.addEventListener('click', function(){
+// clearInterval(Myname)
+//     })
 
-    })
+//     })
+let Myname
+function startButton (){
+    Myname =  setInterval(name , 1000)
+    function name (){
+        console.log('Mirza Nayeem');
+        
+    }
+}
+function stopButton () {
+    clearInterval(Myname)
+}
+
+
+document.getElementById('start').addEventListener('click', startButton)
+document.getElementById('stop').addEventListener('click', stopButton)
 
    
     
