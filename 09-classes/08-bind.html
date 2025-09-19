@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Clicked Me</button>
+</body>
+<script>
+    class react {
+        constructor(){
+            this.library = 'react'
+            this.server = "https://localhost:300"
+
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick.bind(this))
+            // yahan pr this key word likhna compulsory hai else handleClick undefined hoga
+            // yahan pr this.server execute nhi hoga q k usko reference he nhi mill raha hai 
+            // pr "bind" use karne k baad execute hoga to handleClick k ooper bind use karna hoga
+            // aur arguments k ander "this" pass karna hoga 
+        }
+        handleClick (){
+            console.log('button clicked');
+            console.log(this.server); 
+        }
+    }
+    const app = new react()
+</script>
+</html>
